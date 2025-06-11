@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbería Pabellón</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #181818;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 20px;
+    }
+    .servicios ul {
+      list-style: none;
+    }
+    .servicios li {
+      background: #1e1e1e;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .galeria img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .galeria iframe {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 10px;
+      height: 533px;
+    }
+    form {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #e6b800;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #1f1f1f;
+      color: #888;
+    }
+    .redes a {
+      margin: 0 10px;
+      color: #e6b800;
+      text-decoration: none;
+    }
+    @media (min-width: 768px) {
+      nav {
+        gap: 40px;
+      }
+      .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .galeria img, .galeria iframe {
+        width: 45%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Barbería Pabellón</h1>
+    <p>Estilo, precisión y elegancia</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#turnos">Turnos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenidos a Barbería Pabellón</h2>
+    <p>Donde el estilo y la atención personalizada se encuentran. Cortes clásicos y modernos para quienes buscan calidad.</p>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Corte clásico</li>
+      <li>Fade / Degradé</li>
+      <li>Barba y perfilado</li>
+      <li>Afeitado</li>
+    </ul>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <h2>Galería</h2>
+    <img src="https://via.placeholder.com/300x200?text=Corte+1" alt="Corte 1">
+    <img src="https://via.placeholder.com/300x200?text=Corte+2" alt="Corte 2">
+    <img src="https://via.placeholder.com/300x200?text=Barba" alt="Barba">
+    <iframe src="https://www.instagram.com/reel/DJ4ot0vAsIV/embed" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section id="turnos">
+    <h2>Reservá tu turno (solo domingos)</h2>
+    <form id="turnoForm">
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <input type="text" id="hora" placeholder="Horario preferido (ej: 15:00)" required />
+      <textarea id="comentario" placeholder="Comentario opcional"></textarea>
+      <button type="submit">Enviar a WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Estamos en Córdoba Capital. Contactanos por redes:</p>
+    <div class="redes">
+      <a href="https://wa.link/l9r782" target="_blank">WhatsApp</a>
+      <a href="https://www.instagram.com/barberiapabellon/" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Barbería Pabellón. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("turnoForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const hora = document.getElementById("hora").value;
+      const comentario = document.getElementById("comentario").value;
+
+      const mensaje = `Hola, soy ${nombre}. Quisiera reservar un turno para el domingo a las ${hora}. ${comentario ? 'Comentario: ' + comentario : ''}`;
+
+      const url = `https://wa.link/l9r782?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
