@@ -11,6 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    .inicio-box {
+  background-color: #0d0d0d; /* Negro profundo con contraste */
+  border: 2px solid #00FF87; /* Borde verde neón */
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.2); /* Sutil brillo verde */
+}
+
+.inicio-box h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #00FF87;
+}
+
+.inicio-box p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.8;
+}
    * {
   margin: 0;
   padding: 0;
@@ -162,10 +183,12 @@ nav a:hover {
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="inicio">
+ <section id="inicio">
+  <div class="inicio-box">
     <h2>Bienvenidos a Barbería Pabellón</h2>
     <p>Donde el estilo y la atención personalizada se encuentran. Ofrecemos cortes clásicos y modernos para quienes buscan calidad y experiencia.</p>
-  </section>
+  </div>
+</section>
 
   <section id="servicios" class="servicios">
     <h2>Servicios</h2>
