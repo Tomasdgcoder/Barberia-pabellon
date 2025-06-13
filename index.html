@@ -8,24 +8,26 @@
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
     body {
-      background-color: #121212;
-      color: #fff;
-      line-height: 1.6;
-    }
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
 
     header {
-      background-color: #1f1f1f;
-      padding: 30px 20px;
-      text-align: center;
+  background-color: #000;
+  padding: 30px 20px;
+  text-align: center;
+}
     }
     header h1 {
       font-size: 2rem;
@@ -37,22 +39,24 @@
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #181818;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #fff;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #000;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #00FF87;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00B862;
+}
 
     section {
       padding: 40px 20px;
@@ -99,19 +103,20 @@
       font-size: 1rem;
     }
     .form-container button {
-      background-color: #e6b800;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .form-container button:hover {
-      background-color: #cc9900;
-    }
+  background-color: #00FF87;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #00B862;
+}
 
     footer {
       text-align: center;
@@ -122,11 +127,15 @@
     }
 
     .redes a {
-      margin: 0 10px;
-      color: #e6b800;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  margin: 0 10px;
+  color: #00FF87;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redes a:hover {
+  color: #00B862;
+}
 
     @media (prefers-reduced-motion: no-preference) {
       nav a {
