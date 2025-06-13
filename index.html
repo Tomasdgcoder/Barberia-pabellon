@@ -241,24 +241,64 @@ nav a:hover {
   </section>
 
   <section id="turnos">
-    <h2 style="text-align: center;">Reservá tu turno</h2>
-    <div class="form-container">
-      <form id="turnoForm">
-  <input type="text" id="nombre" placeholder="Tu nombre" required minlength="2" />
-  <input type="text" id="hora" placeholder="Horario preferido (ej: 15:00)" required pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" title="Formato: HH:MM (ej: 15:00)">
-  
-  <select id="barbero" required>
-    <option value="">Seleccioná tu barbero</option>
-    <option value="Facundo">Facundo</option>
-    <option value="Nahuel">Nahuel</option>
-    <option value="Tomas">Tomás</option>
-  </select>
+  <h2 style="text-align: center;">Reservá tu turno</h2>
+  <div class="form-container">
+    <form id="turnoForm">
+      <input type="text" id="nombre" placeholder="Tu nombre" required minlength="2" />
+      <input type="text" id="hora" placeholder="Horario preferido (ej: 15:00)" required pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" title="Formato: HH:MM (ej: 15:00)">
+      
+      <select id="barbero" required>
+        <option value="">Seleccioná tu barbero</option>
+        <option value="Tomas">Tomás</option>
+        <option value="Nahuel">Nahuel</option>
+        <option value="Facundo">Facundo</option>
+      </select>
 
-  <textarea id="comentario" placeholder="Comentario opcional"></textarea>
-  <button type="submit">Enviar a WhatsApp</button>
-</form>
+      <textarea id="comentario" placeholder="Comentario opcional"></textarea>
+      <button type="submit">Enviar a WhatsApp</button>
+    </form>
+  </div>
 
-<script>
+  <script>
+    document.getElementById("turnoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const hora = document.getElementById("hora").value.trim();
+      const barbero = document.getElementById("barbero").value.trim();
+      const comentario = document.getElementById("comentario").value.trim();
+
+      if (!hora.match(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/)) {
+        alert("Por favor ingresa un horario válido (ej: 15:00)");
+        return;
+      }
+
+      if (!barbero) {
+        alert("Por favor seleccioná un barbero");
+        return;
+      }
+
+      let whatsappLink = "";
+
+      switch (barbero) {
+        case "Facundo":
+          whatsappLink = "https://wa.link/dxlh0m"; 
+          break;
+        case "Nahuel":
+          whatsappLink = "https://wa.link/y8jwyi"; 
+          break;
+        case "Tomas":
+          whatsappLink = "https://wa.link/e4h4cw"; 
+          break;
+        default:
+          whatsappLink = "https://wa.link/l9r782"; 
+      }
+
+      const mensaje = `Hola, soy ${nombre}. Quisiera reservar un turno con ${barbero} a las ${hora}. ${comentario ? 'Comentario: ' + comentario : ''}`;
+      const url = `${whatsappLink}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</section>
   document.getElementById("turnoForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const nombre = document.getElementById("nombre").value.trim();
