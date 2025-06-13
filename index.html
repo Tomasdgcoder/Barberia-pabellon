@@ -42,6 +42,24 @@
   background-color: #000;
   color: #fff;
   line-height: 1.6;
+  background-image: url('fondo-barberia.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+}
+
+/* Opcional: Si quieres que el texto destaque mejor */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  z-index: -1;
 }
 
     header {
@@ -168,7 +186,7 @@ nav a:hover {
     }
   </style>
 </head>
-<body>
+<body style="background-image: url('`pabellon.png.png'); background-size: cover; background-repeat: no-repeat; background-blend-mode: overlay;">
 
   <header>
     <h1>Barbería Pabellón</h1>
